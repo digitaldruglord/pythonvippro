@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>App của tôi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+        body {
+            font-family: 'Roboto Condensed'
+        }
+
+        .crlf {
+            font-size: 0.7em;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Xin chào mọi người</h1>
+    <pre>Tui đang tự làm một cái HTTP Server từ móng</pre>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            debug.innerHTML = debug.innerHTML.replace(/\\r\\n\n/g, '<span class=crlf>\\r\\n</span>\n')
+        })
+    </script>
+</body>
+
+</html>
