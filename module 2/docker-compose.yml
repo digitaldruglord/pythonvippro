@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+
+  crlf_inj_level2:
+    build: .
+    command: ["sh", "-c", "pipenv run python manage.py migrate && pip install debugpy -t /tmp && pipenv run python /tmp/debugpy --listen 0.0.0.0:35000 manage.py runserver 0.0.0.0:8000"]
+    container_name: crlf_inj_level2
+    restart: unless-stopped
+    env_file:
+      - .env_main_web
+    ports:
+      - "0.0.0.0:8081:8000"
+      - "0.0.0.0:35000:35000"
+    volumes:
+      - ./main_web:/app

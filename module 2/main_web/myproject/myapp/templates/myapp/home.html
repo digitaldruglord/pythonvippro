@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include "myapp/header.html" %}
+</head>
+
+<body>
+
+  <h1>img leech v1.0</h1>
+  <form method=get action="/image/"> <input type=text name=url placeholder="Enter your image URL here"
+    style="width:300px">
+    <input type=submit>
+    <hr>
+    <p>
+      <a href="/image/?url=http%3A%2F%2Ftraining.onsoft.vn%2Fwp-content%2Fuploads%2F2019%2F08%2FHTTP.png">Example</a>
+    </p>
+    <i>{{ message }}</i>
+</body>
+
+</html>

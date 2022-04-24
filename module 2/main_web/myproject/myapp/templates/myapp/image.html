@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "myapp/header.html" %}
+</head>
+
+<body>
+    {% if 'debug' in request.GET %}
+    <h2>DEBUG LOG</h2>
+    <pre id=debug>{{ debug }}</pre>
+    <hr>
+    {% endif %}
+    <h1>Your image:</h1>
+    <img src="data:image/png;base64,{{ image_encoded }}" />
+    <script>
+        debug.innerHTML = debug.innerHTML.replace(/\\r\\n\n/g,'<span class=crlf>\\r\\n</span>\n')
+    </script>
+</body>
+
+</html>
